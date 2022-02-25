@@ -1,0 +1,87 @@
+from django.urls import path
+
+from .views import (
+    PersonaTemplateView,
+    PersonListApiView,
+    PersonListApiViewFilter,
+    PersonCreateAPIView,
+    PersonDetailAPIView,
+    PersonDeleteAPIView,
+    PersonRetrieveDestroyAPIView,
+    PersonUpdateAPIView,
+    PersonRetrieveUpdateAPIView,
+    PersonaApiList,
+    ReunionByPersonJOb,
+    ReunionListAPIView,
+    ReunionListAPIViewLink
+)
+
+app_name = 'app_persona'
+
+urlpatterns = [
+    path(
+        'test/lista/',
+        PersonaTemplateView.as_view(),
+        name='listar_personas'
+    ),
+    path(
+        'api/persona/list/',
+        PersonListApiView.as_view(),
+        name='api_listar_personas'
+    ),
+    path(
+        'api/persona/search/<kword>/',
+        PersonListApiViewFilter.as_view(),
+        name='api_filtrar_personas'
+    ),
+    path(
+        'api/persona/create/',
+        PersonCreateAPIView.as_view(),
+        name='api_crear_personas'
+    ),
+    path(
+        'api/persona/detail/<pk>/',
+        PersonDetailAPIView.as_view(),
+        name='api_detalle_personas'
+    ),
+    path(
+        'api/persona/delete/<pk>/',
+        PersonDeleteAPIView.as_view(),
+        name='api_borrar_personas'
+    ),
+    path(
+        'api/persona/deleteinfo/<pk>/',
+        PersonRetrieveDestroyAPIView.as_view(),
+        name='api_borrarinfo_personas'
+    ),
+    path(
+        'api/persona/update/<pk>/',
+        PersonUpdateAPIView.as_view(),
+        name='api_actualizar_personas'
+    ),
+    path(
+        'api/persona/updateinfo/<pk>/',
+        PersonRetrieveUpdateAPIView.as_view(),
+        name='api_actualizarinfo_personas'
+    ),
+    path(
+        'api/persona/list-modificado/',
+        PersonaApiList.as_view(),
+        name='api_listar_personas'
+    ),
+    path(
+        'api/reunion/list/',
+        ReunionListAPIView.as_view(),
+        name='api_listar_reuniones'
+    ),
+    path(
+        'api/reunion/list-link/',
+        ReunionListAPIViewLink.as_view(),
+        name='api_listar_con_link_reuniones'
+    ),
+    path(
+        'api/reunion/list-count/',
+        ReunionByPersonJOb.as_view(),
+        name='api_listar_contador_reuniones'
+    ),
+]

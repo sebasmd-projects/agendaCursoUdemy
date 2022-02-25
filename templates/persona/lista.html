@@ -1,0 +1,30 @@
+<!-- head para PC -->
+{% extends "persona/base_personas.html" %}
+
+{% load  static %}
+
+{% block content %}
+
+<div style="padding: 5em;"> 
+    <div> 
+        <div> 
+            <h3>Personas en la agenda</h3> 
+            <app>
+                <div> 
+                    <div v-model="kword"> 
+                        <input type="text" v-model="kword" placeholder="buscar.." style="max-width: 20rem;">
+                    </div>
+                    <div> 
+                        <ul> 
+                            <li v-for="persona in listaPersonas">
+                                <a href="#">{$ persona.full_name $}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </app>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

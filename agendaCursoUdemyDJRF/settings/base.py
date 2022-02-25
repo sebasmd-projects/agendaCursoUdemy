@@ -39,10 +39,14 @@ DJANGO_APPS = (
     'django.contrib.staticfiles', 
 ) 
 
-LOCAL_APPS = ( 
+LOCAL_APPS = (
+    'applications.persona',
+    'applications.home',
 ) 
 
 THIRD_PARTY_APPS = (
+    'rest_framework',
+    'ckeditor',
 ) 
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS 

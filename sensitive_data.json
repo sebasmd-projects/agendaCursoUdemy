@@ -1,5 +1,6 @@
 {
     "FILE_NAME": "sensitive_data.json",
+    "ENVIRONMENT": "local",
     "SECRET_KEY": "@-7qha*#c@xm*2)lp5bnfc70vlcg%=3(03@5_!pait_li7i4!7",
     "ROOT_URLCONF": "agendaCursoUdemyDJRF.urls",
     "WSGI_APPLICATION": "agendaCursoUdemyDJRF.wsgi.application",
